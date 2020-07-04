@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
-  
+const GlobalStyle = createGlobalStyle` 
   *, *::before, *::after {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -17,7 +15,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-size: 1.6rem;
-    font-family: "Open Sans", sans-serif;
+    font-family: ${({ theme }) => theme.fontFamily.leading};
+
+    {/* Only for testing - TO REMOVE LATER */}
+    background-image: url(${({ theme }) => theme.mode === 'dark' ? theme.darkMode.bgImg : theme.lightMode.bgImg});
   }
 `;
 
