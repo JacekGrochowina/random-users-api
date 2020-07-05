@@ -2,6 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle` 
   *, *::before, *::after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -16,9 +18,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-size: 1.6rem;
     font-family: ${({ theme }) => theme.fontFamily.leading};
-
-    {/* Only for testing - TO REMOVE LATER */}
-    background-image: url(${({ theme }) => theme.mode === 'dark' ? theme.darkMode.bgImg : theme.lightMode.bgImg});
   }
 `;
 
