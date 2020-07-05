@@ -6,7 +6,7 @@ import storage from 'local-storage-fallback';
 
 function getInitialTheme() {
     const savedTheme = storage.getItem('theme');
-    return savedTheme === null ? JSON.parse(savedTheme) : { ...mainTheme, mode: 'light' }
+    return savedTheme ? JSON.parse(savedTheme) : { ...mainTheme, mode: 'light' }
 }
 
 const MainTemplate = ({ children }) => {
@@ -22,7 +22,12 @@ const MainTemplate = ({ children }) => {
                 {children}
                 
                 {/* Only for testing - TO REMOVE LATER */}
-                {/* <button
+                <button
+                    style={{
+                        position: 'fixed',
+                        top: 0,
+                        right: 0
+                    }}
                     onClick={(e) => setTheme(
                         theme.mode === 'dark' ? 
                         { ...mainTheme, mode: 'light' } :
@@ -30,7 +35,7 @@ const MainTemplate = ({ children }) => {
                     )}
                 >
                     Toggle Theme
-                </button> */}
+                </button>
             </ThemeProvider>
         </>
     )
