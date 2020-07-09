@@ -4,19 +4,17 @@ import bgDark from 'assets/images/bg-dark.jpg';
 export const mainTheme = {
     color: {
         leading: '#F5820C',
+        leading2: '#103d65', /* #051E34 */
         light: '#FFFFFF',
         light2: '#DEDEDE',
+        grey: '#959595',
         dark: '#232323',
         dark2: '#333333',
     },
     darkMode: {
-        leading: '#DEDEDE',
-        dark: '#232323',
         bgImg: bgDark,
     },
     lightMode: {
-        leading: '#051E34',
-        dark: '#333333',
         bgImg: bgLight,
     },
     fontFamily: {
