@@ -5,19 +5,17 @@ import { routes } from 'routes';
 import MainTemplate from 'templates/MainTemplate';
 
 import LoginPage from 'views/LoginPage';
-
-import Heading from 'components/atoms/Heading/Heading';
-import Tone from 'components/atoms/Tone/Tone';
+import UserPage from 'views/UserPage';
 
 const Root = () => {
   return (
     <>
     <BrowserRouter>
       <MainTemplate>
-        <Switch>
-          <Route exact path={routes.login} component={LoginPage} />
-          {/* <Route exact path={routes.home} component={HomePage} /> */}
-        </Switch>
+          <Switch>
+            <Route exact path={routes.login} component={LoginPage} />
+            <Route exact path={routes.home} component={UserPage} />
+          </Switch>
       </MainTemplate>
     </BrowserRouter>
     </>
