@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const AuthIcon = styled.div`
@@ -17,6 +16,13 @@ const AuthIcon = styled.div`
         theme.color.dark2 : 
         theme.color.light2
     };
+    border-bottom: 1px solid ${({ theme }) => theme.mode === 'dark' ? 
+        theme.color.dark2 : 
+        theme.color.light2
+    };
+    &:nth-last-of-type(1) {
+        border-bottom: none;
+    }
     color: ${({ color }) => color};
     font-weight: ${({ theme }) => theme.fontWeight.semiBold};
     cursor: pointer;
