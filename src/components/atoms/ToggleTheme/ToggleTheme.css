@@ -1,0 +1,8 @@
+.leading-color.react-toggle--checked .react-toggle-track {
+    background-color: #F5820C !important;
+}
+
+.leading-color.react-toggle--checked .react-toggle-thumb {
+    left: 27px;
+    border-color: #F5820C !important;
+}
