@@ -16,7 +16,7 @@ const LoginPage = () => {
     return (
         <AuthTemplate>
             <Heading>Random Users <Tone>API</Tone></Heading>
-            <SyledHeading secondary>Zaloguj się</SyledHeading>
+            <SyledHeading secondary>Zaloguj się przez...</SyledHeading>
             <AuthIcons />
         </AuthTemplate>
     )
