@@ -19,16 +19,15 @@ const StyledAuthUserPicture = styled(AuthUserPicture)`
     margin-right: 30px;
 `;
 
-const AuthUser = ({ children, src }) => {
+const AuthUser = ({ src, name, email, phone }) => {
     return (
         <Wrapper>
             <Header>
                 <StyledAuthUserPicture src={src} />
-                <AuthUserName>{children}</AuthUserName>
+                <AuthUserName>{name}</AuthUserName>
             </Header>
-
-            <AuthUserData type="email">milton@example.com</AuthUserData>
-            <AuthUserData type="tel.">698 325 220</AuthUserData>
+            {email != null ? <AuthUserData type="email">{email}</AuthUserData> : null}
+            {phone != null ? <AuthUserData type="phone">{phone}</AuthUserData> : null}
         </Wrapper>
     )
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
 import Heading from 'components/atoms/Heading/Heading';
 import Tone from 'components/atoms/Tone/Tone';
@@ -59,15 +60,16 @@ const Overlay = styled.div`
 `;
 
 const Baner = () => {
+    const auth = useSelector(state => state.auth);
     const [active, setActive] = useState(false);
 
     return (
         <Wrapper>
             <User
                 onClick={() => setActive(!active)}
-                img="https://randomuser.me/api/portraits/men/41.jpg"
+                img={auth.photoURL}
             >
-                Milton <Tone>Ross</Tone>
+                {auth.displayName}
             </User>
             <Container>
                 <StyledHeading>Random Users <Tone>API</Tone></StyledHeading>
@@ -75,7 +77,12 @@ const Baner = () => {
 
             <Overlay active={active} onClick={() => setActive(!active)}/>
             <Sidebar active={active}>
-                <AuthUser src="https://randomuser.me/api/portraits/men/41.jpg">Milton<br/> Ross</AuthUser>
+                <AuthUser 
+                    src={auth.photoURL}
+                    name={auth.displayName}
+                    email={auth.email}
+                    phone={auth.phoneNumber}
+                />
             </Sidebar>
         </Wrapper>
     )
