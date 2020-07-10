@@ -11,11 +11,11 @@ const Wrapper = styled.div`
     margin: 20px 0 0 35px;
 `;
 
-const AuthIcons = () => (
+const AuthIcons = ({ onClick }) => (
     <Wrapper>
-        <AuthIcon icon={FacebookIcon} color="#3B579D">Facebook</AuthIcon>
-        <AuthIcon icon={GoogleIcon} color="#EA4335">Google</AuthIcon>
-        <AuthIcon icon={GithubIcon} color="#000000">Github</AuthIcon>
+        <AuthIcon onClick={onClick} icon={FacebookIcon} color="#3B579D">Facebook</AuthIcon>
+        <AuthIcon onClick={onClick} icon={GoogleIcon} color="#EA4335">Google</AuthIcon>
+        <AuthIcon onClick={onClick} icon={GithubIcon} color="#000000">Github</AuthIcon>
     </Wrapper>
 )
 

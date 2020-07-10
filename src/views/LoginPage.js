@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { signIn } from 'redux/actions/AuthActions';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import AuthTemplate from 'templates/AuthTemplate';
 import Heading from 'components/atoms/Heading/Heading';
@@ -19,17 +22,32 @@ const Wrapper = styled.div`
     align-items: center;
 `;
 
-const LoginPage = () => {
-    return (
-        <AuthTemplate>
-            <Wrapper>
-                <Heading>Random Users <Tone>API</Tone></Heading>
-                <ToggleTheme />
-            </Wrapper>
-            <SyledHeading secondary>Zaloguj się przez...</SyledHeading>
-            <AuthIcons />
-        </AuthTemplate>
-    )
+class LoginPage extends Component {
+
+    static contextTypes = {
+        router: PropTypes.object
+    };
+
+    componentWillUpdate(nextProps) {
+        if (nextProps.auth) this.props.history.push("/app");
+    }
+
+    render() {
+        return (
+            <AuthTemplate>
+                <Wrapper>
+                    <Heading>Random Users <Tone>API</Tone></Heading>
+                    <ToggleTheme />
+                </Wrapper>
+                <SyledHeading secondary>Zaloguj się przez...</SyledHeading>
+                <AuthIcons onClick={this.props.signIn} />
+            </AuthTemplate>
+        )
+    };
 }
 
-export default LoginPage;
+function mapStateToProps({ auth }) {
+    return { auth };
+}
+
+export default connect(mapStateToProps, { signIn })(LoginPage);
