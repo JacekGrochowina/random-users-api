@@ -4,12 +4,11 @@ import styled from 'styled-components';
 import UserPageTemplate from 'templates/UserPageTemplate'; 
 import Button from 'components/atoms/Button/Button';
 import Tile from 'components/atoms/Tile/Tile';
+import ToggleTheme from 'components/atoms/ToggleTheme/ToggleTheme';
 
 import UserPlus from 'assets/icons/user-plus-solid.svg';
 import UserMinus from 'assets/icons/user-minus-solid.svg';
 import UserTrash from 'assets/icons/trash-alt-solid.svg';
-
-import ToggleTheme from 'components/atoms/ToggleTheme/ToggleTheme';
 
 
 const Section = styled.div`
