@@ -25,3 +25,14 @@ export const signIn = () => dispatch => {
         console.log(error);
     });
 };
+
+export const signOut = () => dispatch => {
+    authRef
+      .signOut()
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
