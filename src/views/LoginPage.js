@@ -29,7 +29,7 @@ class LoginPage extends Component {
     };
 
     componentWillUpdate(nextProps) {
-        if (nextProps.auth) this.props.history.push("/app");
+        if (nextProps.auth) this.props.history.push('/app');
     }
 
     render() {
