@@ -43,6 +43,11 @@ const Sidebar = styled.div`
       theme.color.light
     };
     z-index: 99;
+
+    overflow-y: scroll;
+    ::-webkit-scrollbar {
+        display: none;
+    }
 `;
 
 const Overlay = styled.div`
