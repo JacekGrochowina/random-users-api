@@ -23,6 +23,7 @@ const Type = styled.label`
 const Text = styled.label`
     padding-left: 15px;
     font-weight: ${({ theme }) => theme.fontWeight.semiBold};
+    font-size: ${({ theme }) => theme.fontSize.xs};
     color: ${({ theme }) => theme.mode === 'dark' ? 
         theme.color.grey : 
         theme.color.dark2
