@@ -3,10 +3,23 @@ import styled from 'styled-components';
 import AuthUserName from 'components/atoms/AuthUserName/AuthUserName';
 import AuthUserPicture from 'components/atoms/AuthUserPicture/AuthUserPicture';
 import AuthUserData from 'components/atoms/AuthUserData/AuthUserData';
+import LogOut from 'components/atoms/LogOut/LogOut';
+import ToggleTheme from 'components/atoms/ToggleTheme/ToggleTheme';
 
-const Wrapper = styled.div`
+const WrapperMain = styled.div`
+    position: relative;
     display: flex;
     flex-direction: column;
+`;
+
+const WrapperLogOut = styled.div`
+    margin-top: 20vh;
+`;
+
+const WrapperToggleTheme = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
 `;
 
 const Header = styled.div`
@@ -21,14 +34,22 @@ const StyledAuthUserPicture = styled(AuthUserPicture)`
 
 const AuthUser = ({ src, name, email, phone }) => {
     return (
-        <Wrapper>
+        <WrapperMain>
             <Header>
                 <StyledAuthUserPicture src={src} />
                 <AuthUserName>{name}</AuthUserName>
             </Header>
+
             {email != null ? <AuthUserData type="email">{email}</AuthUserData> : null}
             {phone != null ? <AuthUserData type="phone">{phone}</AuthUserData> : null}
-        </Wrapper>
+
+            <WrapperLogOut>
+                <WrapperToggleTheme>
+                    <ToggleTheme />
+                </WrapperToggleTheme>
+                <LogOut />
+            </WrapperLogOut>
+        </WrapperMain>
     )
 }
 
