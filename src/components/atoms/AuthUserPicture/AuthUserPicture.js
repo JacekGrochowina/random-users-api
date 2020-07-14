@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const AuthUserPicture = styled.img`
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     border: 2px solid;
     color: ${({ theme }) => theme.color.leading};
 `;
